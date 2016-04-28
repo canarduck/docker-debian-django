@@ -30,5 +30,4 @@ RUN export DISPLAY=":99"
 # VENV
 RUN export WORKSPACE=`pwd`
 RUN virtualenv -p python3 venv
-RUN source venv/bin/activate
 
