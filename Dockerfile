@@ -13,9 +13,8 @@ RUN apt-get update \
     xvfb iceweasel \
     g++ \
     build-essential \
-    virtualenv
-# Cleaning
-RUN apt-get clean -y \
+    virtualenv \
+  && apt-get clean -y \
   && apt-get autoclean -y \
   && apt-get autoremove -y \
   && rm -rf /usr/share/locale/* \
@@ -24,10 +23,7 @@ RUN apt-get clean -y \
   && rm -rf /usr/share/doc/*
 
 # Xvfb
-RUN /usr/bin/Xvfb :99 -ac -screen 0 1024x768x8 &
-RUN export DISPLAY=":99" 
-
-# VENV
-RUN export WORKSPACE=`pwd`
+CMD ["/usr/bin/Xvfb", ":99", "-ac", "-screen 0 1024x768x8", "&"]
+ENV DISPLAY :99 
 RUN virtualenv -p python3 venv
 
