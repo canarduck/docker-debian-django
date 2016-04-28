@@ -10,7 +10,8 @@ RUN apt-get update \
     libjpeg-dev \
     libfreetype6-dev \
     zlib1g-dev \
-    xvfb iceweasel \
+    xvfb \
+    iceweasel \
     g++ \
     build-essential \
     virtualenv \
