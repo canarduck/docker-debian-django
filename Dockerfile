@@ -24,7 +24,7 @@ RUN apt-get update \
   && rm -rf /usr/share/doc/*
 
 # Xvfb
-CMD ["/usr/bin/Xvfb", ":99", "-ac", "-screen 0 1024x768x8", "&"]
-ENV DISPLAY :99 
-RUN virtualenv -p python3 venv
+# CMD ["/usr/bin/Xvfb", ":99", "-ac", "-screen 0 1024x768x8", "&"]
+# ENV DISPLAY :99 
+# RUN virtualenv -p python3 venv
 
