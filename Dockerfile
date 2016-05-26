@@ -1,5 +1,6 @@
 # Pull base image
 FROM debian:jessie
+ENV LANG fr_FR.UTF-8
 
 # Update & install packages
 RUN apt-get update \
@@ -24,9 +25,3 @@ RUN apt-get update \
   && rm -rf /var/cache/debconf/*-old \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /usr/share/doc/*
-
-# Xvfb
-# CMD ["/usr/bin/Xvfb", ":99", "-ac", "-screen 0 1024x768x8", "&"]
-# ENV DISPLAY :99 
-# RUN virtualenv -p python3 venv
-
