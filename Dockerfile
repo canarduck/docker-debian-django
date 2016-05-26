@@ -4,6 +4,7 @@ FROM debian:jessie
 # Update & install packages
 RUN apt-get update \
   && apt-get install -y \
+    python3-pip \
     python3-dev \
     libpq-dev \
     postgresql-client \
