@@ -7,7 +7,7 @@ RUN apt-get update \
   && apt-get install -y \
     python3-pip \
     python3-dev \
-    python3-setuptools \
+    python-wheel \
     libpq-dev \
     postgresql-client \
     libjpeg-dev \
