@@ -21,8 +21,7 @@ RUN apt-get update \
     xvfb \
     iceweasel \
     g++ \
-    build-essential \
-    virtualenv \
+    build-essential
   && apt-get clean -y \
   && apt-get autoclean -y \
   && apt-get autoremove -y \
@@ -30,6 +29,9 @@ RUN apt-get update \
   && rm -rf /var/cache/debconf/*-old \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /usr/share/doc/*
+
+# Virtualenv de jessie (1.11) n'utilise pas wheel, j'install par pip (1.15)
+RUN pip install virtualenv
 
 RUN locale-gen fr_FR.UTF-8 \
   && DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
