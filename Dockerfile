@@ -4,6 +4,7 @@ FROM debian:jessie
 ENV LANGUAGE fr_FR.UTF-8
 ENV LANG fr_FR.UTF-8
 ENV LC_ALL fr_FR.UTF-8
+ENV LC_ALL fr_FR.UTF-8
 
 # Update & install packages
 RUN apt-get update \
@@ -30,8 +31,5 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /usr/share/doc/*
 
-RUN \
-  dpkg-reconfigure locales && \
-  locale-gen fr_FR.UTF-8 && \
-  /usr/sbin/update-locale LANG=fr_FR.UTF-8
-RUN echo 'fr_FR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
+RUN locale-gen fr_FR.UTF-8 \
+  && DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
