@@ -27,5 +27,5 @@ RUN apt-get update \
   && rm -rf /usr/share/doc/*
 
 RUN dpkg-reconfigure locales && \
-    locale-gen C.UTF-8 && \
-    /usr/sbin/update-locale LANG=C.UTF-8
+    locale-gen fr_FR.UTF-8 && \
+    /usr/sbin/update-locale LANG=fr_FR.UTF-8
