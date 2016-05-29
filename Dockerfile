@@ -1,6 +1,10 @@
 # Pull base image
 FROM debian:jessie
 
+ENV LANGUAGE fr_FR.UTF-8
+ENV LANG fr_FR.UTF-8
+ENV LC_ALL fr_FR.UTF-8
+
 # Update & install packages
 RUN apt-get update \
   && apt-get install -y \
@@ -28,6 +32,6 @@ RUN apt-get update \
 
 RUN \
   dpkg-reconfigure locales && \
-  locale-gen $LANG && \
-  /usr/sbin/update-locale LANG=$LANG
-RUN echo $LANG 'UTF-8' >> /etc/locale.gen && locale-gen
+  locale-gen fr_FR.UTF-8 && \
+  /usr/sbin/update-locale LANG=fr_FR.UTF-8
+RUN echo 'fr_FR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
