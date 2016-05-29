@@ -1,11 +1,6 @@
 # Pull base image
 FROM debian:jessie
 
-ENV LANGUAGE fr_FR.UTF-8
-ENV LANG fr_FR.UTF-8
-ENV LC_ALL fr_FR.UTF-8
-ENV LC_ALL fr_FR.UTF-8
-
 # Update & install packages
 RUN apt-get update \
   && apt-get install -y \
@@ -17,7 +12,6 @@ RUN apt-get update \
     libjpeg-dev \
     libfreetype6-dev \
     zlib1g-dev \
-    locales \
     xvfb \
     iceweasel \
     g++ \
@@ -32,6 +26,3 @@ RUN apt-get update \
 
 # Virtualenv de jessie (1.11) n'utilise pas wheel, j'install par pip (1.15)
 RUN pip3 install virtualenv
-
-RUN locale-gen fr_FR.UTF-8 \
-  && DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
