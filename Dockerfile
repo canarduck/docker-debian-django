@@ -31,7 +31,7 @@ RUN apt-get update \
   && rm -rf /usr/share/doc/*
 
 # Virtualenv de jessie (1.11) n'utilise pas wheel, j'install par pip (1.15)
-RUN pip install virtualenv
+RUN pip3 install virtualenv
 
 RUN locale-gen fr_FR.UTF-8 \
   && DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
