@@ -30,4 +30,4 @@ RUN \
   dpkg-reconfigure locales && \
   locale-gen $LANG && \
   /usr/sbin/update-locale LANG=$LANG
-RUN echo '$LANG UTF-8' >> /etc/locale.gen && locale-gen
+RUN echo $LANG 'UTF-8' >> /etc/locale.gen && locale-gen
