@@ -1,10 +1,6 @@
 # Pull base image
 FROM debian:jessie
 
-RUN locale-gen $LANG
-RUN echo "LC_ALL=\"$LANG\"" >> /etc/default/locale 
-RUN update-locale LANG=$LANG
-
 # Update & install packages
 RUN apt-get update \
   && apt-get install -y \
@@ -30,3 +26,8 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /usr/share/doc/*
 
+RUN \
+  dpkg-reconfigure locales && \
+  locale-gen $LANG && \
+  /usr/sbin/update-locale LANG=$LANG
+RUN echo '$LANG UTF-8' >> /etc/locale.gen && locale-gen
