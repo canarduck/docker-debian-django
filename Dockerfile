@@ -9,6 +9,8 @@ RUN apt-get update \
     libpq-dev \
     postgresql-client \
     libjpeg-dev \
+    libxml2-dev \ 
+    libxslt1-dev \
     libfreetype6-dev \
     zlib1g-dev \
     xvfb \
