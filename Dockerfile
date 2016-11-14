@@ -21,7 +21,7 @@ RUN apt-get install -y \
     libfreetype6-dev \
     zlib1g-dev \
     xvfb \
-    iceweasel \
+    firefox-esr \
     g++ \
     build-essential \
     wget \
