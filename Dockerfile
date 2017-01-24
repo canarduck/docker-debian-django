@@ -26,6 +26,7 @@ RUN apt-get install -y \
     build-essential \
     wget \
     locales \
+    tor \
   && apt-get clean -y \
   && apt-get autoclean -y \
   && apt-get autoremove -y \
