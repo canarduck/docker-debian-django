@@ -32,6 +32,7 @@ RUN apt-get install -y \
     wget \
     locales \
     tor \
+    deb.torproject.org-keyring \
   && apt-get clean -y \
   && apt-get autoclean -y \
   && apt-get autoremove -y \
