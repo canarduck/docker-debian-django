@@ -11,6 +11,7 @@ ENV LC_ALL C.UTF-8 ENV LANG fr_FR.UTF-8 ENV LANGUAGE fr_FR.UTF-8
 RUN apt-get install -y \
     python3-pip \
     python3-dev \
+    python3-virtualenv \
     libpq-dev \
     postgresql-client \
     libjpeg-dev \
@@ -30,9 +31,6 @@ RUN apt-get install -y \
   && rm -rf /var/cache/debconf/*-old \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /usr/share/doc/*
-
-# Virtualenv de jessie (1.11) n'utilise pas wheel, j'install par pip (1.15)
-RUN pip3 install virtualenv
 
 # Geckodriver pour selenium
 RUN wget -qO- \
