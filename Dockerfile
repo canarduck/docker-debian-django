@@ -1,6 +1,11 @@
 # Pull base image
 FROM debian:jessie
 
+# tor
+RUN apt-key adv --keyserver pgp.mit.edu --recv-keys \
+    A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 && \
+    /bin/echo -n "deb http://deb.torproject.org/torproject.org jessie main" \
+    >>/etc/apt/sources.list
 # Change locale 
 RUN apt-get update -y && apt-get install -y locales
 RUN dpkg-reconfigure locales && \
