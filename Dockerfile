@@ -48,3 +48,5 @@ RUN wget -qO- \
   https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz | \
   tar xvz -C /usr/local/bin
 
+# socks5 tor
+EXPOSE 9050
