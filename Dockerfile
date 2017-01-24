@@ -1,5 +1,9 @@
 # Pull base image
 FROM debian:jessie
+ENV DEBIAN_FRONTEND noninteractive
+
+# 
+RUN echo "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
 
 # tor
 RUN apt-key adv --keyserver pgp.mit.edu --recv-keys \
