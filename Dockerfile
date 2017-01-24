@@ -52,6 +52,8 @@ RUN pip3 install virtualenv
 RUN wget -qO- \
   https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz | \
   tar xvz -C /usr/local/bin
+  
+CMD service tor start
 
 # socks5 tor
 EXPOSE 9050
