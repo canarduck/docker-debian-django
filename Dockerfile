@@ -1,6 +1,5 @@
 # Pull base image
 FROM debian:jessie
-ARG DEBIAN_FRONTEND=noninteractive
 
 # tor
 RUN apt-key adv --keyserver pgp.mit.edu --recv-keys \
