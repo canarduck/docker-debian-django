@@ -20,8 +20,6 @@ RUN apt-get install -y \
     libxslt1-dev \
     libfreetype6-dev \
     zlib1g-dev \
-    xvfb \
-    firefox-esr \
     g++ \
     build-essential \
     wget \
