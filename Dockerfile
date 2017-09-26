@@ -1,5 +1,5 @@
 # Pull base image
-FROM debian:stable-slim
+FROM debian:stable
 ENV DEBIAN_FRONTEND noninteractive
 ENV TIMEZONE Europe/Paris
 ENV LC_ALL C.UTF-8
@@ -20,7 +20,7 @@ RUN apt-get install -y \
     python3-virtualenv \
     python3-venv \
     libpq-dev \
-    postgresql-client-9.6 \
+    postgresql-client \
     libjpeg-dev \
     libxml2-dev \ 
     libxslt1-dev \
