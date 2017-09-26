@@ -1,11 +1,17 @@
 # Pull base image
-FROM debian:jessie
+FROM debian:stable-slim
 ENV DEBIAN_FRONTEND noninteractive
+ENV TIMEZONE Europe/Paris
+ENV LC_ALL C.UTF-8
+ENV LANG fr_FR.UTF-8
+ENV LANGUAGE fr_FR.UTF-8
 
 # Change locale 
 RUN apt-get update -y && apt-get install -y locales
 RUN echo 'fr_FR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
-ENV LC_ALL C.UTF-8 ENV LANG fr_FR.UTF-8 ENV LANGUAGE fr_FR.UTF-8
+
+# Timezone
+RUN echo $TIMEZONE > /etc/timezone && dpkg-reconfigure tzdata
 
 # Update & install packages
 RUN apt-get install -y \
@@ -33,5 +39,5 @@ RUN apt-get install -y \
 
 # Geckodriver pour selenium
 RUN wget -qO- \
-  https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz | \
+  https://github.com/mozilla/geckodriver/releases/download/v0.19.0/geckodriver-v0.19.0-linux64.tar.gz | \
   tar xvz -C /usr/local/bin
