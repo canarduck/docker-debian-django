@@ -20,7 +20,7 @@ RUN apt-get install -y \
     python3-virtualenv \
     python3-venv \
     libpq-dev \
-    postgresql-client \
+    postgresql-client-9.6 \
     libjpeg-dev \
     libxml2-dev \ 
     libxslt1-dev \
@@ -28,6 +28,7 @@ RUN apt-get install -y \
     zlib1g-dev \
     g++ \
     build-essential \
+    openssh-client \
     wget \
   && apt-get clean -y \
   && apt-get autoclean -y \
