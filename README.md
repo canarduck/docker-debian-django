@@ -1,14 +1,12 @@
-# docker-debian-django
+# dockgo
 
-Image docker pour CI de projets django en python 3
+**Dock**er + Djan**go** sur une base debian stable.
 
-## Target
+Image docker utilisée pour de la CI de projets django en python 3
 
-Image de base pour CI gitlab. Tests unitaires + fonctionnels avec selenium (firefox sur xvfb) 
+## Packages
 
-## Packages included
-
-* python3
-* postgresql-client
-* selenium tests (firefox + xvfb + [geckodriver](https://github.com/mozilla/geckodriver/releases))
-* tor
+* python3 (pip, dev, virtualenv, venv)
+* postgresql client (libpq-dev, postgresql-client)
+* geckodriver (pour selenium)
+* ... cf [Dockerfile](Dockerfile)
